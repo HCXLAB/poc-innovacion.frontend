@@ -1,0 +1,50 @@
+.home-container {
+  text-align: center;
+}
+
+mat-toolbar {
+  margin-bottom: 1em;
+}
+
+header h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+header p {
+  margin-bottom: 2em;
+}
+
+.categories {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2em;
+}
+
+.category {
+  width: 30%;
+}
+
+.category mat-icon {
+  font-size: 40px;
+  margin-right: 10px;
+}
+
+.latest-publications, .initiatives {
+  margin-bottom: 2em;
+}
+
+.latest-publications h2, .initiatives h2 {
+  font-size: 1.75em;
+  margin-bottom: 1em;
+}
+
+.latest-publications .publication {
+  text-align: left;
+  margin-bottom: 1em;
+}
+
+.initiatives mat-list-item {
+  text-align: left;
+  margin-bottom: 0.5em;
+}
