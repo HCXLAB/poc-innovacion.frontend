@@ -1,20 +1,84 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Route } from '@angular/router';
+import { initialDataResolver } from 'app/app.resolvers';
+import { AuthGuard } from 'app/core/auth/guards/auth.guard';
+import { NoAuthGuard } from 'app/core/auth/guards/noAuth.guard';
+import { LayoutComponent } from 'app/layout/layout.component';
 
-export const routes: Routes = [
-  { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
-  { path: 'usuarios', loadChildren: () => import('./usuarios/usuarios.module').then(m => m.UsuariosModule) },
-  { path: 'desafios', loadChildren: () => import('./desafios/desafios.module').then(m => m.DesafiosModule) },
-  { path: 'iniciativas', loadChildren: () => import('./iniciativas/iniciativas.module').then(m => m.IniciativasModule) },
-  { path: 'evaluaciones', loadChildren: () => import('./evaluaciones/evaluaciones.module').then(m => m.EvaluacionesModule) },
-  { path: 'categorias', loadChildren: () => import('./categorias/categorias.module').then(m => m.CategoriasModule) },
-  { path: 'comentarios', loadChildren: () => import('./comentarios/comentarios.module').then(m => m.ComentariosModule) },
-  { path: 'adjuntos', loadChildren: () => import('./adjuntos/adjuntos.module').then(m => m.AdjuntosModule) },
-  { path: '', redirectTo: '/usuarios', pathMatch: 'full' }
+// @formatter:off
+/* eslint-disable max-len */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+export const appRoutes: Route[] = [
+
+    // Redirect empty path to '/example'
+    { path: '', pathMatch: 'full', redirectTo: 'home' },
+
+    // Redirect signed-in user to the '/example'
+    //
+    // After the user signs in, the sign-in page will redirect the user to the 'signed-in-redirect'
+    // path. Below is another redirection for that path to redirect the user to the desired
+    // location. This is a small convenience to keep all main routes together here on this file.
+    { path: 'signed-in-redirect', pathMatch: 'full', redirectTo: 'example' },
+
+    // Auth routes for guests
+    {
+        path: '',
+        canActivate: [NoAuthGuard],
+        canActivateChild: [NoAuthGuard],
+        component: LayoutComponent,
+        data: {
+            layout: 'empty'
+        },
+        children: [
+            { path: 'confirmation-required', loadChildren: () => import('app/modules/auth/confirmation-required/confirmation-required.routes') },
+            { path: 'forgot-password', loadChildren: () => import('app/modules/auth/forgot-password/forgot-password.routes') },
+            { path: 'reset-password', loadChildren: () => import('app/modules/auth/reset-password/reset-password.routes') },
+            { path: 'sign-in', loadChildren: () => import('app/modules/auth/sign-in/sign-in.routes') },
+            { path: 'sign-up', loadChildren: () => import('app/modules/auth/sign-up/sign-up.routes') }
+        ]
+    },
+
+    // Auth routes for authenticated users
+    {
+        path: '',
+        canActivate: [AuthGuard],
+        canActivateChild: [AuthGuard],
+        component: LayoutComponent,
+        data: {
+            layout: 'empty'
+        },
+        children: [
+            { path: 'sign-out', loadChildren: () => import('app/modules/auth/sign-out/sign-out.routes') },
+            { path: 'unlock-session', loadChildren: () => import('app/modules/auth/unlock-session/unlock-session.routes') }
+        ]
+    },
+
+    // Landing routes
+    {
+        path: '',
+        component: LayoutComponent,
+        data: {
+            layout: 'empty'
+        },
+        children: [
+            {path: 'landing', loadChildren: () => import('app/modules/landing/home/home.routes')},
+        ]
+    },
+
+    // Admin routes
+    {
+        path: '',
+        canActivate: [AuthGuard],
+        canActivateChild: [AuthGuard],
+        component: LayoutComponent,
+        resolve: {
+            initialData: initialDataResolver
+        },
+        data: {
+            layout: 'modern'
+        },
+        children: [
+            { path: 'example', loadChildren: () => import('app/modules/admin/example/example.routes') },
+            { path: 'home', loadChildren: () => import('app/home/home.routes') }
+        ]
+    }
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }

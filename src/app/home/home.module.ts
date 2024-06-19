@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeRoutingModule } from './home-routing.module';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { InitiativesComponent } from './pages/initiatives/initiatives.component';
 import { LatestPublicationsComponent } from './pages/latest-publications/latest-publications.component';
@@ -14,11 +13,10 @@ import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
-    
+
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule,
     MatButtonModule,
     MatIconModule,
     MatCardModule,

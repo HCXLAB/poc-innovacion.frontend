@@ -12,12 +12,11 @@ import { CloudData, CloudOptions, TagCloudComponent } from 'angular-tag-cloud-mo
     templateUrl: './home.component.html',
     styleUrl: './home.component.css',
     imports: [
+        LatestPublicationsComponent,
         InitiativesComponent,
         CategoriesComponent,
-        LatestPublicationsComponent,
-        NavbarComponent,
-        MatToolbar,
-        TagCloudComponent
+        TagCloudComponent,
+        NavbarComponent
     ]
 })
 export class HomeComponent {
