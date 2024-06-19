@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePageComponent } from './home/pages/home/home-page/home-page.component';
+import { HomeComponent } from './home/pages/home/home.component';
 
 export const routes: Routes = [
-    { path: 'home', component: HomePageComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'usuarios', loadChildren: () => import('./usuarios/usuarios.module').then(m => m.UsuariosModule) },
   { path: 'desafios', loadChildren: () => import('./desafios/desafios.module').then(m => m.DesafiosModule) },
   { path: 'iniciativas', loadChildren: () => import('./iniciativas/iniciativas.module').then(m => m.IniciativasModule) },
