@@ -9,20 +9,26 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list'
+import { NavbarComponent } from '../shared/pages/navbar/navbar.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    
+  ],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    CategoriesComponent,
-    LatestPublicationsComponent,
-    InitiativesComponent,
     MatButtonModule,
     MatIconModule,
     MatCardModule,
     MatToolbarModule,
     MatListModule,
+    HomeComponent,
+    CategoriesComponent,
+    LatestPublicationsComponent,
+    InitiativesComponent,
+    NavbarComponent
   ]
 })
 export class HomeModule { }

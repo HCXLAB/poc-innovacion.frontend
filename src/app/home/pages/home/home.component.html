@@ -1,1 +1,20 @@
-<p>home works!</p>
+<app-navbar></app-navbar>
+<div class="home-container">
+  <header>
+    <h1>Cuéntanos tu desafío para resolverlo entre todos</h1>
+    <p>
+      Nuestra meta es darle el espacio a todos en Havas para que puedan
+      colaborar en la búsqueda de mejores formas de trabajar
+    </p>
+  </header>
+  <angular-tag-cloud
+    [data]="data"
+    [width]="options.width"
+    [height]="options.height"
+    [overflow]="options.overflow"
+  >
+  </angular-tag-cloud>
+  <app-categories></app-categories>
+  <app-latest-publications></app-latest-publications>
+  <app-initiatives></app-initiatives>
+</div>
