@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { CategoriesComponent } from "../categories/categories.component";
 import { LatestPublicationsComponent } from "../latest-publications/latest-publications.component";
 import { InitiativesComponent } from "../initiatives/initiatives.component";
-import { NavbarComponent } from "../../../shared/pages/navbar/navbar.component";
 import { MatToolbar } from '@angular/material/toolbar';
 import { CloudData, CloudOptions, TagCloudComponent } from 'angular-tag-cloud-module';
 
@@ -16,7 +15,6 @@ import { CloudData, CloudOptions, TagCloudComponent } from 'angular-tag-cloud-mo
         InitiativesComponent,
         CategoriesComponent,
         TagCloudComponent,
-        NavbarComponent
     ]
 })
 export class HomeComponent {
