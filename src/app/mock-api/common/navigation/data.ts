@@ -2,53 +2,74 @@
 import { FuseNavigationItem } from '@fuse/components/navigation';
 
 export const defaultNavigation: FuseNavigationItem[] = [
-    {
+
+  {
         id   : 'home',
         title: 'Home',
         type : 'basic',
-        icon : 'heroicons_outline:chart-pie',
+        icon : 'heroicons_outline:home',
         link : '/home'
     },
-    
+    {
+        id   : 'publicaciones',
+        title: 'Publicaciones',
+        type : 'basic',
+        icon : 'heroicons_outline:home',
+        link : '/publicaciones'
+    },
+    {
+        id   : 'publicaciones',
+        title: 'Publicaciones',
+        type : 'basic',
+        icon : 'heroicons_outline:newspaper',
+        link : '/publicaciones'
+    },
 ];
 export const compactNavigation: FuseNavigationItem[] = [
-    {
+  {
         id   : 'home',
         title: 'Home',
         type : 'basic',
-        icon : 'heroicons_outline:chart-pie',
+        icon : 'heroicons_outline:home',
         link : '/home'
-    }
+    },
+    {
+        id   : 'publicaciones',
+        title: 'Publicaciones',
+        type : 'basic',
+        icon : 'heroicons_outline:newspaper',
+        link : '/publicaciones'
+    },
 ];
 export const futuristicNavigation: FuseNavigationItem[] = [
-    {
+  {
         id   : 'home',
         title: 'Home',
         type : 'basic',
-        icon : 'heroicons_outline:chart-pie',
+        icon : 'heroicons_outline:home',
         link : '/home'
-    }
+    },
+    {
+        id   : 'publicaciones',
+        title: 'Publicaciones',
+        type : 'basic',
+        icon : 'heroicons_outline:newspaper',
+        link : '/publicaciones'
+    },
 ];
 export const horizontalNavigation: FuseNavigationItem[] = [
-    {
+  {
         id   : 'home',
         title: 'Home',
         type : 'basic',
-        icon : 'heroicons_outline:chart-pie',
+        icon : 'heroicons_outline:home',
         link : '/home'
     },
     {
-        id   : 'iniciativas',
-        title: 'Iniciaticas',
+        id   : 'publicaciones',
+        title: 'Publicaciones',
         type : 'basic',
-        icon : 'heroicons_outline:chart-pie',
-        link : '/iniciativas'
+        icon : 'heroicons_outline:newspaper',
+        link : '/publicaciones'
     },
-    {
-        id   : 'desafios',
-        title: 'Desafios',
-        type : 'basic',
-        icon : 'heroicons_outline:chart-pie',
-        link : '/desafios'
-    }
 ];

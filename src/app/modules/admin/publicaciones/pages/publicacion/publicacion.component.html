@@ -1,0 +1,56 @@
+
+
+<div class=" inset-0 flex min-w-0 flex-col overflow-hidden">
+    <mat-drawer-container class="h-full flex-auto">
+
+        <!-- Drawer content -->
+        <mat-drawer-content class="flex flex-col overflow-hidden">
+            <!-- Header -->
+            <div
+                class="bg-card flex flex-0 items-center border-b py-2 pl-4 pr-6 dark:bg-transparent sm:py-4 md:pl-6 md:pr-8 lg:hidden lg:border-b-0"
+            >
+                <!-- Title & Actions -->
+                <a mat-icon-button [routerLink]="['..']">
+                    <mat-icon
+                        [svgIcon]="'heroicons_outline:arrow-small-left'"
+                    ></mat-icon>
+                </a>
+                <h2
+                    class="ml-2.5 truncate text-md font-medium tracking-tight sm:text-xl"
+                >
+                    <!-- {{ course.title }} -->
+                </h2>
+            </div>
+           
+            <!-- Main -->
+            <div class="flex-auto overflow-y-auto" cdkScrollable>
+                <!-- Steps -->
+                <mat-tab-group
+                    class="fuse-mat-no-header"
+                    [animationDuration]="'200'"
+                    #courseSteps
+                >
+      
+                        <mat-tab>
+                            <ng-template matTabContent>
+                                <div
+                                    class="bg-card prose prose-sm mx-auto max-w-3xl overflow-hidden rounded-2xl p-6 shadow sm:my-2 sm:p-10 sm:py-12 lg:mt-4"
+                                    [innerHTML]="data"
+                                >
+                            </div>
+                            </ng-template>
+                        </mat-tab>
+                    
+                </mat-tab-group>
+
+         
+            </div>
+
+    
+
+        </mat-drawer-content>
+    </mat-drawer-container>
+    <app-formulario></app-formulario>
+
+</div>
+

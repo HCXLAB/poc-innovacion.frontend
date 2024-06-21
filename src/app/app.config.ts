@@ -90,7 +90,7 @@ export const appConfig: ApplicationConfig = {
                 services: mockApiServices,
             },
             fuse: {
-                layout: 'classy',
+                layout: 'modern',
                 scheme: 'auto',
                 screens: {
                     sm: '600px',

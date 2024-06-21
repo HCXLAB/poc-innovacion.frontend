@@ -1,0 +1,75 @@
+<div class="flex min-w-0 flex-auto flex-col">
+    <!-- Main -->
+    <div class="flex flex-auto flex-col items-center p-6 sm:p-10">
+        <div class="flex w-full max-w-4xl flex-col">
+            <!-- Form -->
+            <div
+                class="bg-card mt-8 rounded-2xl p-6 pb-7 shadow sm:mt-12 sm:p-10 sm:pb-7"
+            >
+                <!-- Alert -->
+                @if (alert) {
+                    <fuse-alert
+                        class="mb-8"
+                        [type]="alert.type"
+                        [showIcon]="false"
+                    >
+                        {{ alert.message }}
+                    </fuse-alert>
+                }
+                <form
+                    class="space-y-3"
+                    [formGroup]="supportForm"
+                    #supportNgForm="ngForm"
+                >
+                    <div class="mb-6">
+                        <div class="text-2xl font-bold tracking-tight">
+                            Aporta con tus ideas para esta propuesta
+                        </div>
+                        <div class="text-secondary">
+                            Tu información será procesada por nuestro staff de ideas en menos de 24 estará publicada.
+                        </div>
+                    </div>
+               
+                    <!-- Message -->
+                    <mat-form-field class="w-full">
+                        <textarea
+                            matInput
+                            [formControlName]="'message'"
+                            [required]="true"
+                            [rows]="5"
+                            cdkTextareaAutosize
+                        ></textarea>
+                        <mat-label>Message</mat-label>
+                        @if (supportForm.get('message').hasError('required')) {
+                            <mat-error> Required </mat-error>
+                        }
+                    </mat-form-field>
+                    <!-- Actions -->
+                    <div class="flex items-center justify-end">
+                        <button
+                            mat-button
+                            [color]="'accent'"
+                            [disabled]="
+                                supportForm.pristine || supportForm.untouched
+                            "
+                            (click)="clearForm()"
+                        >
+                            Limpiar
+                        </button>
+                        <button
+                            class="ml-2"
+                            mat-flat-button
+                            [color]="'primary'"
+                            [disabled]="
+                                supportForm.pristine || supportForm.invalid
+                            "
+                            (click)="sendForm()"
+                        >
+                            Enviar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
