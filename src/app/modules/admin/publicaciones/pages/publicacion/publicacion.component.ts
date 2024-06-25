@@ -13,6 +13,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { PublicacionesComponent } from "../publicaciones/publicaciones.component";
 import { FormularioComponent } from "../../../formulario/pages/formulario/formulario.component";
 import { PropuestasComponent } from "../../../propuestas/pages/propuestas/propuestas.component";
+import { FuseCardComponent } from "../../../../../../@fuse/components/card/card.component";
+import { ComentariosComponent } from "../../../comentarios/pages/comentarios/comentarios.component";
 
 @Component({
     selector: 'app-publicacion',
@@ -32,7 +34,9 @@ import { PropuestasComponent } from "../../../propuestas/pages/propuestas/propue
         MatFormFieldModule,
         PublicacionesComponent,
         FormularioComponent,
-        PropuestasComponent
+        PropuestasComponent,
+        FuseCardComponent,
+        ComentariosComponent
     ]
 })
 export class PublicacionComponent {

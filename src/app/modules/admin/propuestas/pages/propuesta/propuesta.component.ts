@@ -13,6 +13,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterLink } from '@angular/router';
+import { ComentariosComponent } from "../../../comentarios/pages/comentarios/comentarios.component";
 
 @Component({
     selector: 'app-propuesta',
@@ -35,7 +36,8 @@ import { RouterLink } from '@angular/router';
         TextFieldModule,
         MatDividerModule,
         MatTooltipModule,
-        TitleCasePipe
+        TitleCasePipe,
+        ComentariosComponent
     ]
 })
 export class PropuestaComponent {

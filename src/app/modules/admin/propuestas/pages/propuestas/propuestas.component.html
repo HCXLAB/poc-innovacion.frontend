@@ -1,7 +1,4 @@
 <div class="inset-0 flex min-w-0 flex-col overflow-y-auto" cdkScrollable>
-
-
-
     <!-- Main -->
     <div class="flex flex-auto flex-col items-center p-6 sm:p-10">
         <!-- Title -->
@@ -10,59 +7,87 @@
         >
             Propuestas a esta idea
         </div>
+        
 
         <!-- Boards -->
         <div
             class="mt-8 grid grid-cols-4 gap-4 sm:grid-cols-2 md:mt-16 lg:grid-cols-4"
         >
-        <a
-        class="bg-card flex w-56 flex-col items-start rounded-lg p-6 shadow transition-shadow duration-150 ease-in-out hover:shadow-xl"
-        [routerLink]="['/propuestas/',id]"
-    >
-        <div
-            class="flex items-center justify-center rounded-full bg-primary-50 p-4 text-primary-700 dark:bg-primary dark:text-on-primary"
-        >
-            <mat-icon
-                class="text-current"
-                [svgIcon]=""
-            ></mat-icon>
-        </div>
-        <!-- Title -->
-        <div class="mt-5 text-lg font-medium leading-5">
-            Titulo
-        </div>
-        <!-- Description -->
-        <div class="text-secondary mt-0.5 line-clamp-2">
-            Descripcion
-        </div>
-        <!-- Members -->
-            <div class="mt-6 h-1 w-12 border-t-2"></div>
-            <div class="mt-6 flex items-center -space-x-1.5">
-
+            <a
+                class="bg-card flex w-56 flex-col items-start rounded-lg p-6 shadow transition-shadow duration-150 ease-in-out hover:shadow-xl"
+                [routerLink]="['/propuestas/', id]"
+            >
+                <div
+                    class="flex items-center justify-center rounded-full bg-primary-50 p-4 text-primary-700 dark:bg-primary dark:text-on-primary"
+                >
+                    <mat-icon class="text-current" [svgIcon]=""></mat-icon>
+                </div>
+                <!-- Title -->
+                <div class="mt-5 text-lg font-medium leading-5">
+                    Chatbot debe estar también para whatsapp
+                </div>
+                <!-- Description -->
+                <div class="text-secondary mt-0.5 line-clamp-2">
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit torquent, eros porttitor aliquet volutpat placerat nostra potenti tellus, sociis sodales habitant sed urna lectus enim. Magnis mattis torquent at curabitur bibendum leo pharetra fames potenti nullam cubilia orci tempor curae sociis commodo ullamcorper, montes euismod eu dui est habitant rhoncus morbi ad lobortis justo etiam dis vehicula nulla. Conubia eleifend nam eget nullam molestie non fusce potenti, nostra dictumst volutpat primis erat eu etiam commodo consequat, lobortis habitasse massa in blandit risus eros.
+                </div>
+                <!-- Members -->
+                <div class="mt-6 h-1 w-12 border-t-2"></div>
+                <div class="mt-6 flex items-center -space-x-1.5">
                     <img
                         class="ring-bg-card h-8 w-8 flex-0 rounded-full object-cover ring ring-offset-1 ring-offset-transparent"
                         [src]=""
                         alt="Member avatar"
                     />
-
                     <div
                         class="ring-bg-card flex h-8 w-8 flex-0 items-center justify-center rounded-full bg-gray-200 text-gray-500 ring ring-offset-1 ring-offset-transparent"
                     >
-                        <div class="text-md font-semibold">
-                            +5
-                        </div>
+                        <div class="text-md font-semibold">+5</div>
                     </div>
-                
+                </div>
+
+                <!-- Last activity -->
+                <div class="font-md mt-4 flex items-center text-md">
+                    <div class="text-secondary">Fecha:</div>
+                    <div class="ml-1">11-11-1111</div>
+                </div>
+            </a>
+            <a
+            class="bg-card flex w-56 flex-col items-start rounded-lg p-6 shadow transition-shadow duration-150 ease-in-out hover:shadow-xl"
+            [routerLink]="['/propuestas/', id]"
+        >
+            <div
+                class="flex items-center justify-center rounded-full bg-primary-50 p-4 text-primary-700 dark:bg-primary dark:text-on-primary"
+            >
+                <mat-icon class="text-current" [svgIcon]=""></mat-icon>
             </div>
-        
-        <!-- Last activity -->
-        <div class="font-md mt-4 flex items-center text-md">
-            <div class="text-secondary">Fecha:</div>
-            <div class="ml-1">
-                11-11-1111
+            <!-- Title -->
+            <div class="mt-5 text-lg font-medium leading-5">Titulo</div>
+            <!-- Description -->
+            <div class="text-secondary mt-0.5 line-clamp-2">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit torquent, eros porttitor aliquet volutpat placerat nostra potenti tellus, sociis sodales habitant sed urna lectus enim. Magnis mattis torquent at curabitur bibendum leo pharetra fames potenti nullam cubilia orci tempor curae sociis commodo ullamcorper, montes euismod eu dui est habitant rhoncus morbi ad lobortis justo etiam dis vehicula nulla. Conubia eleifend nam eget nullam molestie non fusce potenti, nostra dictumst volutpat primis erat eu etiam commodo consequat, lobortis habitasse massa in blandit risus eros.
             </div>
-        </div>
-    </a>
+            <!-- Members -->
+            <div class="mt-6 h-1 w-12 border-t-2"></div>
+            <div class="mt-6 flex items-center -space-x-1.5">
+                <img
+                    class="ring-bg-card h-8 w-8 flex-0 rounded-full object-cover ring ring-offset-1 ring-offset-transparent"
+                    [src]=""
+                    alt="Member avatar"
+                />
+
+                <div
+                    class="ring-bg-card flex h-8 w-8 flex-0 items-center justify-center rounded-full bg-gray-200 text-gray-500 ring ring-offset-1 ring-offset-transparent"
+                >
+                    <div class="text-md font-semibold">+5</div>
+                </div>
+            </div>
+
+            <!-- Last activity -->
+            <div class="font-md mt-4 flex items-center text-md">
+                <div class="text-secondary">Fecha:</div>
+                <div class="ml-1">11-11-1111</div>
+            </div>
+        </a>
             <!-- New board -->
             <div
                 class="flex w-56 cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-300 transition-colors duration-150 ease-in-out hover:bg-hover"
@@ -75,4 +100,3 @@
         </div>
     </div>
 </div>
-

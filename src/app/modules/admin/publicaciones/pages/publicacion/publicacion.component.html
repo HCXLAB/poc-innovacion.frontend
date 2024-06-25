@@ -1,25 +1,101 @@
 <div class="flex min-w-0 flex-auto flex-col">
+    <!-- Header -->
+    <div
+        class="bg-card flex flex-0 flex-col border-b p-6 dark:bg-transparent sm:flex-row sm:items-center sm:justify-between sm:px-10 sm:py-8"
+    >
+        <div class="min-w-0 flex-1">
+            <!-- Breadcrumbs -->
+            <div class="flex flex-wrap items-center font-medium">
+                <div>
+                    <a class="whitespace-nowrap text-primary-500"
+                        >Publicaciones</a
+                    >
+                </div>
+            </div>
+            <!-- Title -->
+            <div class="mt-2">
+                <h2
+                    class="truncate text-3xl font-extrabold leading-7 tracking-tight sm:leading-10 md:text-4xl"
+                >
+                    Idea
+                </h2>
+            </div>
+        </div>
+    </div>
+
     <!-- Main -->
     <div class="flex-auto p-6 sm:p-10">
-        <!-- CONTENT GOES HERE -->
-        <div
-            class="">
+        <fuse-card class="filter-listing flex w-full flex-col">
+            <!-- <img
+                class="object-cover"
+                src="images/cards/coffee-shop-01-320x200.jpg"
+                alt="Card cover image"
+            /> -->
+            <div class="m-8 mb-4">
+                <div class="text-2xl font-semibold leading-tight">
+                    Chatbot con IA para autoatención en RRHH
+                </div>
+                <div class="-ml-1 mt-2 flex items-center leading-none">
+                    <div class="flex items-center">
+                        <mat-icon
+                            class="text-orange-500 icon-size-5"
+                            [svgIcon]="'mat_outline:star'"
+                        ></mat-icon>
+                        <mat-icon
+                            class="text-orange-500 icon-size-5"
+                            [svgIcon]="'mat_outline:star'"
+                        ></mat-icon>
+                        <mat-icon
+                            class="text-orange-500 icon-size-5"
+                            [svgIcon]="'mat_outline:star'"
+                        ></mat-icon>
+                        <mat-icon
+                            class="text-orange-500 icon-size-5"
+                            [svgIcon]="'mat_outline:star'"
+                        ></mat-icon>
+                        <mat-icon
+                            class="text-orange-500 icon-size-5"
+                            [svgIcon]="'mat_outline:star_half'"
+                        ></mat-icon>
+                    </div>
+                    <div class="text-secondary ml-2">4.5</div>
+                    <div class="text-secondary mx-2">&bull;</div>
+                    <div class="text-secondary">98 Valoraciones</div>
+                </div>
+                <div class="mt-6">
+                    Ticking away the moments that make up a dull day You fritter
+                    and waste the hours in an off-hand way Kicking around on a
+                    piece of ground in your home town Waiting for someone or
+                    something to show you the way Tired of lying in the
+                    sunshine, staying home to watch the rain And you are young
+                    and life is long, and there is time to kill today And then
+                    one day you find ten years have got behind you No one told
+                    you when to run, you missed the starting gun And you run and
+                    you run to catch up with the sun but it's sinking Racing
+                    around to come up behind you again Sun is the same, in a
+                    relative way, but you're older Shorter of breath and one day
+                    closer to death Every year is getting shorter, never seem to
+                    find the time Plans that either come to naught, or half a
+                    page of scribbled lines Hanging on in quiet desperation is
+                    the English way The time is gone, the song is over, thought
+                    I'd something more to say
+                </div>
+                <div class="-mx-3 mt-3 flex items-center">
+                    <button class="mr-1 px-3" mat-button>
+                        <mat-icon
+                            class="text-red-500 icon-size-5"
+                            [svgIcon]="'heroicons_solid:heart'"
+                        ></mat-icon>
+                        <span class="ml-2">Me gusta</span>
+                    </button>
+                </div>
+            </div>
+        </fuse-card>
 
+        <hr />
 
-            <h1>titulo de la idea</h1>
-            <h2>descripcion bla bla bla bla bla...</h2>
-            <p>alguna imagen o archivo </p>
-        
-   
+        <app-comentarios></app-comentarios>
+
         <app-propuestas></app-propuestas>
-
-
-    </div>
-
     </div>
 </div>
-
-
-
-
-
