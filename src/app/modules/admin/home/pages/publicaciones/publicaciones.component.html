@@ -124,9 +124,31 @@
                                         [svgIcon]="'heroicons_solid:clock'"
                                     ></mat-icon>
                                     <div class="ml-1.5">
-                                        {{ course.date}} 
+                                        11-11-1111
                                     </div>
                                 </div>
+                                <div
+                                class="text-secondary flex items-center text-md leading-5"
+                            >
+                                <mat-icon
+                                    class="text-hint icon-size-5"
+                                    [svgIcon]="'heroicons_solid:chat-bubble-left-right'"
+                                ></mat-icon>
+                                <div class="ml-1.5">
+                                    Propuestas 5
+                                </div>
+                            </div>
+                            <div
+                            class="text-secondary flex items-center text-md leading-5"
+                        >
+                            <mat-icon
+                                class="text-hint icon-size-5"
+                                [svgIcon]="'heroicons_solid:star'"
+                            ></mat-icon>
+                            <div class="ml-1.5">
+                                4.5
+                            </div>
+                        </div>
                                 <!-- Course completion -->
                                 <div
                                     class="text-secondary mt-2 flex items-center text-md leading-5"
@@ -193,27 +215,7 @@
                             </div>
                             <!-- Footer -->
                             <div class="mt-auto flex w-full flex-col">
-                                <!-- Course progress -->
-                                <div class="relative h-0.5">
-                                    <div
-                                        class="absolute inset-x-0 z-10 -mt-3 h-6"
-                                        [matTooltip]="
-                                            course.progress.currentStep /
-                                                course.totalSteps | percent
-                                        "
-                                        [matTooltipPosition]="'above'"
-                                        [matTooltipClass]="'-mb-0.5'"
-                                    ></div>
-                                    <mat-progress-bar
-                                        class="h-0.5"
-                                        [value]="
-                                            (100 *
-                                                course.progress.currentStep) /
-                                            course.totalSteps
-                                        "
-                                    ></mat-progress-bar>
-                                </div>
-
+                          
                                 <!-- Course launch button -->
                                 <div
                                     class="bg-gray-50 px-6 py-4 text-right dark:bg-transparent"
