@@ -12,6 +12,7 @@ import { Idea } from '../../models/publicaciones';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { PublicacionesComponent } from "../publicaciones/publicaciones.component";
 import { FormularioComponent } from "../../../formulario/pages/formulario/formulario.component";
+import { PropuestasComponent } from "../../../propuestas/pages/propuestas/propuestas.component";
 
 @Component({
     selector: 'app-publicacion',
@@ -30,7 +31,8 @@ import { FormularioComponent } from "../../../formulario/pages/formulario/formul
         FuseFindByKeyPipe,
         MatFormFieldModule,
         PublicacionesComponent,
-        FormularioComponent
+        FormularioComponent,
+        PropuestasComponent
     ]
 })
 export class PublicacionComponent {

@@ -74,9 +74,9 @@ export const appRoutes: Route[] = [
             initialData: initialDataResolver
         },
         children: [
-            {path: 'example', loadChildren: () => import('app/modules/admin/example/example.routes')},
             {path: 'home', loadChildren: () => import('app/modules/admin/home/home.routes')},
             {path: 'publicaciones', loadChildren: () => import('app/modules/admin/publicaciones/publicaciones.routes')},
+            {path: 'propuestas', loadChildren: () => import('app/modules/admin/propuestas/propuestas.routes')},
         ]
     }
 ];
