@@ -57,6 +57,9 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip
 
+      - name: Install serve package
+        run: npm install serve
+
       - name: Login to Azure
         uses: azure/login@v1
         with:
@@ -70,9 +73,9 @@ jobs:
         with:
           app-name: 'pocinnovacionqa'
           slot-name: 'Production'
-          
           package: ./dist
 
       - name: Configure startup command
         run: |
-          az webapp config set --name 'pocinnovacionqa' --resource-group 'cl-local-saas-services-us-qa' --startup-file 'serve -s dist'
+          az webapp config appsettings set --name 'pocinnovacionqa' --resource-group 'cl-local-saas-services-us-qa' --settings WEBSITES_PORT=8080
+          az webapp config set --name 'pocinnovacionqa' --resource-group 'cl-local-saas-services-us-qa' --startup-file 'npx serve -s dist'
