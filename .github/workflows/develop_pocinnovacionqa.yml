@@ -35,7 +35,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: angular-app
-          path: dist/release.zip
+          path: dist/browser/release.zip
 
   deploy:
     runs-on: ubuntu-latest
