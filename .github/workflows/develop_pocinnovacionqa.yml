@@ -71,3 +71,7 @@ jobs:
           app-name: 'pocinnovacionqa'
           slot-name: 'Production'
           package: ./dist
+
+      - name: Configure startup command
+        run: |
+          az webapp config set --name 'pocinnovacionqa' --resource-group 'cl-local-saas-services-us-qa' --startup-file 'serve -s dist'
