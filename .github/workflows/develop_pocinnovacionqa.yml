@@ -26,10 +26,13 @@ jobs:
       - name: Build Angular project
         run: ng build --configuration production
 
+      - name: Check build output
+        run: ls -la dist/browser
+
       - name: Zip artifact for deployment
         run: |
           cd dist/browser
-          zip -r release.zip
+          zip -r release.zip .
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
