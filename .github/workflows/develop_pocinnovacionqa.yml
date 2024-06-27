@@ -1,7 +1,4 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
-name: Build and deploy Node.js app to Azure Web App - pocinnovacionqa
+name: Build and deploy Angular app to Azure Web App - pocinnovacionqa
 
 on:
   push:
@@ -21,22 +18,24 @@ jobs:
         with:
           node-version: '20.x'
 
-      - name: Install Angular CLI
-        run: npm install -g @angular/cli
-
-      - name: npm install, build, and test
+      - name: Install Angular CLI and project dependencies
         run: |
+          npm install -g @angular/cli
           npm install
-          ng build
+
+      - name: Build Angular project
+        run: ng build --configuration production
 
       - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
+        run: |
+          cd dist/fuse
+          zip -r release.zip browser
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
-          name: node-app
-          path: release.zip
+          name: angular-app
+          path: dist/fuse/release.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -45,23 +44,23 @@ jobs:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
-      id-token: write #This is required for requesting the JWT
+      id-token: write # This is required for requesting the JWT
 
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v3
         with:
-          name: node-app
+          name: angular-app
 
       - name: Unzip artifact for deployment
-        run: unzip release.zip
-      
+        run: unzip dist/fuse/release.zip -d .
+
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_6CDF47AA1E934FE2A600C6B85B861B5D }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_9D25F28203FF4AFE9CE92EC9D1B3C307 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_0842D471FD104E44A381F9D1079F3467 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID }}
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
@@ -69,5 +68,4 @@ jobs:
         with:
           app-name: 'pocinnovacionqa'
           slot-name: 'Production'
-          package: ./dist/fuse/browser
-          
+          package: browser
