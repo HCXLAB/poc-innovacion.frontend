@@ -30,8 +30,11 @@ jobs:
       - name: Build Angular project
         run: npm run build-azure
 
-      - name: Zip artifact for deployment
-        run: zip -r release.zip dist
+      - name: Prepare deployment package
+        run: |
+          mkdir -p release
+          cp -r dist/fuse/* release/
+          zip -r release.zip release
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
@@ -55,7 +58,7 @@ jobs:
           name: angular-app
 
       - name: Unzip artifact for deployment
-        run: unzip release.zip
+        run: unzip release.zip -d /home/site/wwwroot
 
       - name: Install serve package
         run: npm install serve
@@ -73,9 +76,9 @@ jobs:
         with:
           app-name: 'pocinnovacionqa'
           slot-name: 'Production'
-          package: ./dist
+          package: /home/site/wwwroot
 
       - name: Configure startup command
         run: |
           az webapp config appsettings set --name 'pocinnovacionqa' --resource-group 'cl-local-saas-services-us-qa' --settings WEBSITES_PORT=8080
-          az webapp config set --name 'pocinnovacionqa' --resource-group 'cl-local-saas-services-us-qa' --startup-file 'npx serve -s dist'
+          az webapp config set --name 'pocinnovacionqa' --resource-group 'cl-local-saas-services-us-qa' --startup-file 'npx serve /home/site/wwwroot -s'
