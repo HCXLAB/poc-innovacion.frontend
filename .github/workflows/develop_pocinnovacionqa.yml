@@ -30,10 +30,13 @@ jobs:
       - name: Build Angular project
         run: npm run build-azure
 
+      - name: List files in dist directory
+        run: ls -R dist
+
       - name: Prepare deployment package
         run: |
           mkdir -p release
-          cp -r dist/fuse/* release/
+          cp -r dist/browser/* release/
           zip -r release.zip release
 
       - name: Upload artifact for deployment job
@@ -81,4 +84,4 @@ jobs:
       - name: Configure startup command
         run: |
           az webapp config appsettings set --name 'pocinnovacionqa' --resource-group 'cl-local-saas-services-us-qa' --settings WEBSITES_PORT=8080
-          az webapp config set --name 'pocinnovacionqa' --resource-group 'cl-local-saas-services-us-qa' --startup-file 'npx serve /home/site/wwwroot -s'
+          az webapp config set --name 'pocinnovacionqa' --resource-group 'cl-local-saas-services-us-qa' --startup-file 'npx serve -s /home/site/wwwroot'
