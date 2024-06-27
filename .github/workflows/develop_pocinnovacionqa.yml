@@ -71,8 +71,3 @@ jobs:
           app-name: 'pocinnovacionqa'
           slot-name: 'Production'
           package: ./dist
-
-      - name: Configure startup command
-        run: |
-          echo "startup command: serve -s dist" > /home/site/wwwroot/startup.txt
-          echo "WEBSITE_RUN_FROM_PACKAGE=1" >> /home/site/wwwroot/.env

@@ -7,11 +7,11 @@
     "private": true,
     "scripts": {
         "ng": "ng",
-        "start": "ng serve",
+        "start": "serve -s dist",
         "build": "ng build",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
-        "build-azure":"ng build --configuration=production --output-hashing=all"
+        "build-azure": "ng build --configuration=production --output-hashing=all"
     },
     "dependencies": {
         "@angular/animations": "18.0.1",
@@ -37,6 +37,7 @@
         "perfect-scrollbar": "1.5.5",
         "quill": "2.0.2",
         "rxjs": "7.8.1",
+        "serve": "^14.2.3",
         "tslib": "2.6.2",
         "zone.js": "0.14.6"
     },
