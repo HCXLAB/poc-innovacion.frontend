@@ -70,6 +70,7 @@ jobs:
         with:
           app-name: 'pocinnovacionqa'
           slot-name: 'Production'
+          
           package: ./dist
 
       - name: Configure startup command
