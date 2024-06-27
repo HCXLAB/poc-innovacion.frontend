@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
 import { FuseCardComponent } from "../../../../../../@fuse/components/card/card.component";
 import { MatIconModule } from '@angular/material/icon';
 import { NgClass, TitleCasePipe } from '@angular/common';
@@ -17,6 +17,8 @@ import { ComentariosComponent } from "../../../comentarios/pages/comentarios/com
 
 @Component({
     selector: 'app-propuesta',
+    encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
     templateUrl: './propuesta.component.html',
     styleUrl: './propuesta.component.scss',

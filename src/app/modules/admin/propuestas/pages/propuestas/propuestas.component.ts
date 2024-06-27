@@ -45,5 +45,5 @@ import { FuseCardComponent } from '@fuse/components/card';
     ],
 })
 export class PropuestasComponent {
-    id: string = 'asdasdasdsa';
+    id: string = 'xxx';
 }

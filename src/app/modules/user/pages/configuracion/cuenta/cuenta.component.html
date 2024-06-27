@@ -1,0 +1,65 @@
+<div class="w-full max-w-3xl">
+    <!-- Form -->
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Perfil</div>
+            <div class="text-secondary">
+                Información de tu cuenta Havas.
+            </div>
+        </div>
+        <div class="mt-8 grid w-full gap-6 sm:grid-cols-4">
+            <!-- Name -->
+            <div class="sm:col-span-4">
+                <mat-form-field class="w-full" [subscriptSizing]="'dynamic'">
+                    <mat-label>Nombre</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:user'"
+                        matPrefix
+                    ></mat-icon>
+                    <input [formControlName]="'name'" matInput [readonly]="true"/>
+                </mat-form-field>
+            </div>
+            <!-- Username -->
+            <div class="sm:col-span-4">
+                <mat-form-field
+                    class="fuse-mat-emphasized-affix w-full"
+                    [subscriptSizing]="'dynamic'"
+                >
+                    <mat-label>Usuario</mat-label>
+                    <input [formControlName]="'username'" matInput [readonly]="true"/>
+                </mat-form-field>
+            </div>
+    
+            <!-- Company -->
+            <div class="sm:col-span-2">
+                <mat-form-field class="w-full" [subscriptSizing]="'dynamic'">
+                    <mat-label>Company</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:building-office-2'"
+                        matPrefix
+                    ></mat-icon>
+                    <input [formControlName]="'company'" matInput [readonly]="true"/>
+                </mat-form-field>
+            </div>
+            <!-- About -->
+            <div class="sm:col-span-4">
+                <mat-form-field class="w-full" [subscriptSizing]="'dynamic'">
+                    <mat-label>Permisos</mat-label>
+                    <textarea [readonly]="true"
+                        matInput
+                        [formControlName]="'about'"
+                        cdkTextareaAutosize
+                        [cdkAutosizeMinRows]="5"
+                    ></textarea>
+                </mat-form-field>
+                <div class="text-hint mt-1 text-md">
+                    Estos son tus permisos actuales.
+                </div>
+            </div>
+        </div>
+
+
+</div>

@@ -12,14 +12,7 @@ export const defaultNavigation: FuseNavigationItem[] = [
     },
     {
         id   : 'publicaciones',
-        title: 'Publicaciones',
-        type : 'basic',
-        icon : 'heroicons_outline:home',
-        link : '/publicaciones'
-    },
-    {
-        id   : 'publicaciones',
-        title: 'Publicaciones',
+        title: 'Todas las ideas',
         type : 'basic',
         icon : 'heroicons_outline:newspaper',
         link : '/publicaciones'
@@ -35,7 +28,7 @@ export const compactNavigation: FuseNavigationItem[] = [
     },
     {
         id   : 'publicaciones',
-        title: 'Publicaciones',
+        title: 'Todas las ideas',
         type : 'basic',
         icon : 'heroicons_outline:newspaper',
         link : '/publicaciones'
@@ -51,7 +44,7 @@ export const futuristicNavigation: FuseNavigationItem[] = [
     },
     {
         id   : 'publicaciones',
-        title: 'Publicaciones',
+        title: 'Todas las ideas',
         type : 'basic',
         icon : 'heroicons_outline:newspaper',
         link : '/publicaciones'
@@ -67,7 +60,7 @@ export const horizontalNavigation: FuseNavigationItem[] = [
     },
     {
         id   : 'publicaciones',
-        title: 'Publicaciones',
+        title: 'Todas las ideas',
         type : 'basic',
         icon : 'heroicons_outline:newspaper',
         link : '/publicaciones'
