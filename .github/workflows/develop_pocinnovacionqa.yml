@@ -51,9 +51,10 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: angular-app
+          path: release.zip
 
       - name: Unzip artifact for deployment
-        run: unzip dist/fuse/release.zip -d .
+        run: unzip release.zip -d .
 
       - name: Login to Azure
         uses: azure/login@v1
