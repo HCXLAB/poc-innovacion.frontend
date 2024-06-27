@@ -28,14 +28,14 @@ jobs:
 
       - name: Zip artifact for deployment
         run: |
-          cd dist/fuse
-          zip -r release.zip browser
+          cd dist/browser
+          zip -r release.zip
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
           name: angular-app
-          path: dist/fuse/release.zip
+          path: dist/release.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -68,5 +68,4 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'pocinnovacionqa'
-          slot-name: 'Production'
-          package: browser
+          package: .
